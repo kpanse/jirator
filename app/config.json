@@ -1,0 +1,59 @@
+{
+"export_directory" : "exports",
+"log_directory" : "logs",
+"auto_confirm_ticket_creation" : true,
+"RMServerURL" : "https://kap02.kpit.com",
+"RMApiKey" : "79926d8d01b5e1b6ff34667f26dd505da50891f2",
+"RMProjectName" : "testing-on-vip-test-benches",
+"RMTrackerName" : "JIRA Tracker",
+"JIRAServerURL" : "https://asc.bmw.com/jira",
+"JIRALinkURLs" : ["https://asc.bmw.com/jira/browse/","https://asc.bmwgroup.net/jira/browse/"],
+"JIRAFiltersForExport" : {
+	"MF_KAP"    : "project = \"Automatisierung Prüffeld E-Antrieb\" AND labels in (MF_KAP, MF-KAP) AND updated > -3d",
+    "VIP_Master_Tickets_weekly"    : "project = \"Automatisierung Prüffeld E-Antrieb\" AND summary ~ \"AP* \" AND Type = Story AND updated > -3d",
+    "TFA_Tickets" : "project = \"Automatisierung Prüffeld E-Antrieb\" AND (summary ~ TFA OR summary ~ Lala OR summary ~ lala OR summary ~ hvl) AND (labels in (MF) OR component in (MF)) AND updated > -3d",
+    "Test_Execution_Master_Tickets": "project = \"Automatisierung Prüffeld E-Antrieb\" AND (labels in (MF) OR component in (MF)) AND summary ~ \"VIP/SYS Testdurchführung \" AND updated > -3d",
+    "TFA_Modification_Master" : "summary ~ \"Modification\" and type = Story and component = MF and type = Story AND updated > -3d",
+    "TFA_Keyword_Automation_Master": "summary ~ \"Keyword Automation\" and component = MF and type = Story AND updated > -3d",
+    "TFA_HEAT": "project = CCB AND labels in (MF) AND component = HEAT AND component = EA-302 AND updated > -3d",
+    "TFA_HVL": "project = CCB AND summary ~ \"HVL*\" AND component in (EA-454, EA-304) AND updated > -3d",
+    "TFA_LALA": "project = CCB AND summary ~ \"LaLa*\" AND component in (EA-454) AND updated > -3d"
+},
+"JIRAFieldsForExport" : [   "Assignee",
+                            "Summary",
+                            "Labels",
+                            "Component/s",
+                            "Updated",
+                            "Duedate",
+                            "Created",
+                            "Resolved",
+                            "Status",
+                            "Resolution",
+                            "Reporter",
+                            "Description",
+                            "Sprint",
+                            "Priority",
+                            "Type",
+                            "Story Points",
+                            "Original Estimate",
+                            "Parent"
+                        ],
+"JIRAFieldsWithDateTime" : ["Created", "Updated", "Duedate", "Resolved"],
+"RMUserRenames" : {
+    "Balayet Bhuiyan": "Md. Bhuiyan",
+    "Benjamin Wiessneth": "Benjamin Wießneth",
+    "Camelia Morhan": "Elena Antici"
+},
+"RMIssueTypeMappings" : {
+    "Epic" : "EPIC"
+},
+"FieldMappings" : {
+    "Reporter": "JIRA Reporter",
+    "Assignee": "JIRA Assignee",
+    "Priority": "JIRA Priority",
+    "Issue key": "Key",
+    "Summary": "subject",
+    "Status": "status",
+    "Type": "Issue Type"    
+}
+}
